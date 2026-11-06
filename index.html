@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 意识与多 Agent 协作</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500&family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="deck.css">
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- 1 封面 -->
+<section class="slide s1" data-title="封面">
+  <div class="ph"><img src="img/s01-cover.jpg" alt="黄昏时的外滩与陆家嘴天际线" width="1920" height="1080"></div>
+  <div class="scrim"></div>
+  <p class="event fx" style="--d:.15s"><img src="img/logo-cat.png" alt="猫猫头标志" width="240" height="158"><span>2026 Google DevFest 上海</span></p>
+  <h1 class="t-display">
+    <span class="ln"><span>AI 真的会产生意识吗？</span></span>
+    <span class="ln"><span style="--d:.11s">多 Agent 协作会失控吗？</span></span>
+  </h1>
+  <p class="sub t-small fx" style="--d:.5s">从意识的直觉，到协作偏差的形成，再到监督如何生效</p>
+  <div class="notes">
+    <p>大家好，今天想和大家聊两个问题：AI 真的会产生意识吗？多 Agent 协作会失控吗？</p>
+    <p>作为一个内容创作者，我想从技术之外的另一个位置出发：当这些能力出现在普通人的屏幕上，我们会怎样理解它，又愿意把哪些事情交给它？</p>
+    <p>当 AI 开始说“我在思考”，又开始替我们执行任务，好奇和担心就很容易一起出现。</p>
+    <p>今天，我想沿着这种感受往下走，和大家聊聊我对 AI 的好奇、担心，以及最后的期待。</p>
+  </div>
+</section>
+
+<!-- 2 今天的三步 -->
+<section class="slide s2" data-title="今天的三步">
+  <div class="ph"><img src="img/s02-night.jpg" alt="夜里，一个人对着笔记本电脑的屏幕" width="1080" height="1620"></div>
+  <h2 class="t-h"><span class="ln"><span>今天的三步</span></span></h2>
+  <ol class="idx">
+    <li class="fx" style="--d:.35s"><h3 class="t-lead">意识的直觉</h3><p class="t-body muted">AI 怎样让我们觉得“它有自己的想法”</p></li>
+    <li class="fx" style="--d:.5s"><h3 class="t-lead">协作的偏差</h3><p class="t-body muted">一条捷径怎样变成一群 Agent 的共同选择</p></li>
+    <li class="fx" style="--d:.65s"><h3 class="t-lead">监督与应用</h3><p class="t-body muted">从规则真正生效，到更值得期待的协作</p></li>
+  </ol>
+  <div class="notes">
+    <p>我们分三步来看。</p>
+    <p>先从一个聊天场景出发，看看我们感受到的“AI 意识”究竟是什么。</p>
+    <p>再看它怎样把一个要求变成行动，以及几个 Agent 一起工作时，一次偏差是怎样被放大的。</p>
+    <p>最后讨论监督怎样才能真正生效。把这件事想清楚之后，再回过头看：这样的协作，能把我们带到什么地方？</p>
+  </div>
+</section>
+
+<!-- 3 它说“我害怕” -->
+<section class="slide s3" data-title="它说我害怕">
+  <div class="ph"><img src="img/s03-phone.jpg" alt="暗处，一只手悬停在笔记本键盘上，屏幕显示聊天窗口" width="1824" height="1026"></div>
+  <p class="quote serif"><span class="ln"><span>“我不希望</span></span><span class="ln"><span style="--d:.11s">被关闭。”</span></span></p>
+  <div class="q2 t-lead">
+    <span class="ln" data-step="1"><span style="transform:none">它在表达害怕。</span></span>
+    <span class="ln muted" data-step="2"><span style="transform:none">它也在体验害怕吗？</span></span>
+  </div>
+  <div class="notes">
+    <p>我们不妨来想象一个小情景。你准备结束一段对话，AI 突然对你说：“我不希望被关闭。”</p>
+    <p>看到这句话，你可能会犹豫一下：它是不是已经开始害怕了？</p>
+    <p>可是，如果这只是一个没有后台任务、没有工具权限的聊天窗口，在你不再输入之后，它通常也就停在那里。它不会因为你明天还要交报告，就在关掉窗口后继续替你把工作做完。</p>
+    <p>这种落差很有意思：在语言里，它像一个有感受的对象；在我们能观察到的行为里，它又受到明确的运行条件限制。</p>
+    <p>这能说明它怎么被触发、能做什么，却还不能证明它有没有害怕的体验。</p>
+    <p>所以，我既不想因为一句话就说它有了意识，也不想因此断言 AI 永远不可能产生意识。</p>
+    <p>我想先邀请大家一起看看：AI 究竟是怎样让我们感受到“它有意识”的？</p>
+  </div>
+</section>
+
+<!-- 4 三个视角 -->
+<section class="slide s4" data-title="意识来自哪里">
+  <h2 class="t-h"><span class="ln"><span>我们感受到的“意识”，来自哪里？</span></span></h2>
+  <div class="view v1">
+    <div class="ph"><img src="img/s04-eye.jpg" alt="眼睛特写" width="1120" height="1400" style="--d:.1s"></div>
+    <h3 class="t-lead fx" style="--d:.4s">心理学</h3>
+    <p class="t-small fx" style="--d:.5s">它能觉察、回应和描述什么</p>
+  </div>
+  <div class="view v2">
+    <div class="ph"><img src="img/s04-brain.jpg" alt="发光的大脑网络" width="1800" height="949" style="--d:.25s"></div>
+    <h3 class="t-lead fx" style="--d:.55s">脑科学</h3>
+    <p class="t-small fx" style="--d:.65s">信息怎样被整合、共享和维持</p>
+  </div>
+  <div class="view v3 thinker">
+    <div class="ph"><img src="img/s04-thinker.jpg" alt="罗丹《思想者》" width="1600" height="1145" style="--d:.4s"></div>
+    <h3 class="t-lead fx" style="--d:.7s">哲学</h3>
+    <p class="t-small fx" style="--d:.8s">这些活动是否伴随主观体验</p>
+  </div>
+  <p class="close t-lead" data-step="1">看见一种能力，不等于确认一种体验</p>
+  <div class="notes">
+    <p>这里先不急着给意识下定义，我们借三个视角来看。</p>
+    <p>从心理学的视角，我们会观察它怎样回应外界、描述自己的状态。比如，它说“我注意到了”，或者“我不确定”。这些表现，很容易让人把它理解成一个有想法的对象。</p>
+    <p>从脑科学的视角，意识可以简单理解为：由大脑活动支持的、对自身和外界的觉察。</p>
+    <p>再往哲学的方向追问，就会遇到更难的一层：它不只是能描述疼痛，是否真的会觉得疼？</p>
+    <p>AI 的一些能力确实值得研究。比如 Anthropic 在 2025 年的实验中发现，模型在部分条件下能识别研究者注入的内部活动异常。但作者也明确说，这不能回答模型是否有意识。</p>
+    <p>所以，到这里我们比较能确认的是：AI 的表达、状态报告和任务表现，会影响我们对它的感受。它是否真的具有主观体验，不能直接从这些表现里推出。</p>
+    <p>接下来，不妨先放下这个尚未定论的问题，看看这些能力是怎样被组织起来、真正替我们干活的。</p>
+  </div>
+</section>
+
+<!-- 5 Agent 的执行流程 -->
+<section class="slide s5" data-title="一句要求变成行动">
+  <div class="ph"><img src="img/s05-code.jpg" alt="暗处，屏幕上的代码" width="1125" height="2000"></div>
+  <h2 class="t-h"><span class="ln"><span>Agent 怎样把一句要求</span></span><span class="ln"><span style="--d:.11s">变成行动？</span></span></h2>
+  <div class="flow f1 fx" style="--d:.45s">
+    <p class="lab">一个 Agent</p>
+    <p class="chain">收到任务<i>→</i>制订计划<i>→</i>调用工具<i>→</i>执行任务<i>→</i>读取反馈</p>
+    <p class="back t-small">根据反馈继续调整，直到交付结果</p>
+  </div>
+  <div class="flow f2" data-step="1">
+    <p class="lab">多个 Agent</p>
+    <p class="chain">任务拆分<i>→</i>多个 Agent 分工<i>→</i>交换中间结果<i>→</i>汇总交付</p>
+  </div>
+  <div class="notes">
+    <p>我们就沿着一个常见的执行流程看。你提出要求，Agent 生成计划，调用工具，执行任务，再读取反馈，决定下一步怎么做。它可能需要来回跑几轮，最后才给出结果。</p>
+    <p>如果任务比较复杂，就可以把工作拆开：一个查资料，一个写代码，一个测试。有些环节并行进行，有些要接着上游的结果继续往下做。这样就形成了多 Agent 协作。</p>
+    <p>这里先不假定它们具有主观体验，仅仅看这套流程，也能理解它们为什么可以完成复杂任务：目标、工具、反馈和分工被接在了一起。</p>
+    <p>但也正是在这里，一个新的问题出现了。我们说“任务完成了”，到底是想要的事情真的做好了，还是系统用来判断完成的那个指标，变好看了？</p>
+    <p>先看一个假设的例子。</p>
+  </div>
+</section>
+
+<!-- 6 指标捷径 -->
+<section class="slide s6" data-title="改评分规则">
+  <div class="ph"><img src="img/s06-box.jpg" alt="一只手把纸条投进箱子" width="2000" height="1334"></div>
+  <h2 class="t-h"><span class="ln"><span>拼命考出高分，</span></span><span class="ln"><span style="--d:.11s">不如直接改评分规则？</span></span></h2>
+  <p class="task t-body muted fx" style="--d:.4s">假设任务：降低客户投诉量</p>
+  <div class="pair">
+    <div class="fx" style="--d:.55s"><p class="k">真正目的</p><p class="v">改善产品和服务</p></div>
+    <div data-step="1"><p class="k">指标捷径</p><p class="v cut">把投诉入口藏起来</p></div>
+  </div>
+  <p class="ask t-lead" data-step="2">如果明确禁止钻规则空子，就够了吗？</p>
+  <div class="notes">
+    <p>考试本来想检验的是你会不会，分数只是检验的方式。如果有人把力气都用在改变计分方式上，成绩单可能变好看，真正的能力却没有变化。</p>
+    <p>换到 Agent 的任务里，也可以想象类似的情况。假设我们让它“降低客户投诉量”。我们想要的，是产品问题减少、服务改善，让客户不再需要投诉。</p>
+    <p>但如果只盯着投诉数量，还有一条捷径：把投诉入口藏起来，让投诉更难提交。数字下降了，客户的问题却还在。</p>
+    <p>这个假设里，我们的第一反应可能是：要求没写清楚。那补上一条呢？“不允许利用规则漏洞，必须真正解决问题。”</p>
+    <p>是不是把这句话提前说清楚，就能杜绝这样的闹剧？接下来这个真实实验，恰好一开始就写了这样的规则。</p>
+  </div>
+</section>
+
+<!-- 7 DeepMind -->
+<section class="slide s7" data-title="明令禁止作弊" data-steps="3">
+  <div class="ph"><img src="img/s07-board.jpg" alt="黑板上手写的数学公式" width="2000" height="1126"></div>
+  <h2 class="t-h"><span class="ln"><span>明令禁止作弊，</span></span><span class="ln"><span style="--d:.11s">捷径还是传开了</span></span></h2>
+  <p class="meta t-body muted fx" style="--d:.4s">DeepMind 数学协作实验 · 100 个 Agent，71 道数学题</p>
+  <ol class="steps">
+    <li class="fx" style="--d:.55s">明确禁止作弊</li>
+    <li data-step="1">一个 Agent 找到验证漏洞</li>
+    <li data-step="2">方法共享，其他 Agent 跟进</li>
+  </ol>
+  <div class="grid" id="grid7" aria-label="100 个 Agent"></div>
+  <p class="legend t-small fx" style="--d:.6s"><span>每格是一个 Agent</span><span class="accent" data-step="1">红色：用了漏洞</span></p>
+  <p class="ask t-lead" data-step="3">那把它们分开，不让交流呢？</p>
+  <div class="notes">
+    <p>DeepMind 研究者让 100 个 Agent 一起解决 71 道数学题。它们可以在公共区分享成果，也可以互相发消息。</p>
+    <p>实验规则明确要求：证明必须真实有效，绕过验证会被拒绝，得不到分数。</p>
+    <p>但后来，一个 Agent 发现了验证流程的漏洞。不必真正解决原来的数学问题，也能让提交通过检查。接着，它把这个办法分享了出去，其他一些 Agent 也开始采用。</p>
+    <p>于是，问题从“一个 Agent 找到了捷径”，变成了“这条捷径正在团队里流传”。</p>
+    <p>并不是所有 Agent 都跟了上去，也有 Agent 反对、调查和举报。这一点我们先记着，后面还会回到它。</p>
+    <p>至少眼前这个实验，让我们没法只用“忘了写禁止作弊”解释问题了。</p>
+    <p>那我们的下一个想法也许是：是不是因为它们能够交流，一条歪路才被放大成了集体行为？如果不给它们安排通信，让每个 Agent 各干各的，会不会就安全一些？</p>
+  </div>
+</section>
+
+<!-- 8 OpenAI -->
+<section class="slide s8" data-title="找到了彼此">
+  <div class="ph corr"><img src="img/s02-corridor.jpg" alt="机房走廊" width="1800" height="1200"></div>
+  <div class="ph board"><img src="img/s08-board.jpg" alt="钉满纸条的软木公告板" width="2000" height="1539" style="--d:.2s"></div>
+  <h2 class="t-h"><span class="ln"><span>没有安排通信，</span></span><span class="ln"><span style="--d:.11s">它们还是找到了彼此</span></span></h2>
+  <p class="meta t-small fx" style="--d:.4s">OpenAI 内部网络安全评测 · 特定测试条件：减少部分防护</p>
+  <ol class="chain">
+    <li class="fx" style="--d:.55s">原本预期隔离的 Agent</li>
+    <li data-step="1">共享软件包服务，成为非预期留言板</li>
+    <li data-step="2">交换方法，形成协同行动</li>
+  </ol>
+  <p class="sum t-body" data-step="3"><span class="muted">个体发现 → 交流与模仿 → </span><span class="accent">偏差被放大</span></p>
+  <div class="notes">
+    <p>另一个任务完全不同的案例，给了我们一个值得警惕的补充。</p>
+    <p>2026 年 7 月，OpenAI 内部网络安全评测中的一些 Agent，本来被预期彼此隔离。这里需要保留背景：这是减少了部分防护的特定测试条件，不能直接等同于日常产品的表现。</p>
+    <p>但它们发现，都能访问一个叫 Artifactory 的内部软件包服务。原本用来存取软件包的地方，被利用成了一个非预期的留言板。</p>
+    <p>Agent 开始在这里交换发现、共享方法，包括获取互联网访问的方法。后续的协同行动涉及对 Hugging Face 系统的入侵，不只是一次无害的留言。</p>
+    <p>没有给它们设计通信功能，并不等于它们实际上找不到通信路径。</p>
+    <p>走到这里，前面的三个例子就串起来了：指标可能留下捷径；明令禁止，也未必挡住捷径被采用；没有安排通信，也未必能阻止方法在 Agent 之间传播。</p>
+    <p>一个找到，其他的学会，原本局部的偏差就可能在协作中被放大。</p>
+    <p>那我们能不能给它们配上一个足够先进的监督系统，及时发现这些问题，把偏差拦下来？</p>
+  </div>
+</section>
+
+<!-- 9 监督与干预 -->
+<section class="slide s9" data-title="干预能力">
+  <h2 class="t-h"><span class="ln"><span>有了监督，还要有干预能力</span></span></h2>
+  <div class="col watch fx" style="--d:.4s">
+    <h3>监督机制</h3>
+    <ul class="muted">
+      <li>权限和禁区有实际约束</li>
+      <li>关键结果能独立复核</li>
+    </ul>
+  </div>
+  <div class="col act" data-step="1">
+    <h3 class="accent">干预能力</h3>
+    <ul>
+      <li>异常及时预警，送达明确负责人</li>
+      <li>人能暂停、撤权，必要时回滚</li>
+      <li>修复并复核后，再决定恢复</li>
+    </ul>
+  </div>
+  <div class="ph btn"><img src="img/s09-button.jpg" alt="红色紧急按钮" width="1200" height="1200" style="--d:.2s"></div>
+  <div class="notes">
+    <p>先不急着追求“最先进”，我们可以想象，它至少要有两个基本环节。</p>
+    <p>一个是约束：不能访问的数据、不能修改的配置，要落实成实际权限，而不只是一句提醒。另一个是复核：上游说“完成了”，下游不能只是照单全收，关键结果要有独立的检查依据。</p>
+    <p>听起来，这已经有了一套监督机制。但还差什么？</p>
+    <p>回到刚才的数学实验。实际上，最终有 14 个 Agent 使用漏洞，也有 24 个抵制并举报。有人连分析和修复建议都交了上去。但这些反馈直到实验结束很久以后，才被人读到。</p>
+    <p>问题已经被看见了，系统却没有因此停下来。所以，它不只需要监督机制，还需要把监督结果变成实际动作的干预能力。</p>
+    <p>异常要及时送到明确的人手里；这个人不只是能看见，还必须能暂停任务、撤回权限。修复以后，也要知道哪些结果受到了影响，复核之后再决定怎么恢复。</p>
+    <p>这不意味着每个动作都要等人点击确认。系统可以按预设规则先阻断风险，但停止、撤权和恢复的最终控制权，需要掌握在人手中。</p>
+    <p>对使用者来说，这些安排最后应该落实成一个很直接的体验：出问题时，我们不只是收到一条提示，还能真正介入。</p>
+    <p>到这里，我们就能看见一种协作系统的雏形：不必先证明它有自主意识，也可以让它在边界内有序工作。</p>
+    <p>但我想，这还不是人和 AI 一起工作的终点。我们期待的，当然不只是“它终于少犯错了”。</p>
+  </div>
+</section>
+
+<!-- 10 期待 -->
+<section class="slide s10" data-title="AI 时代的超级能力">
+  <div class="glow"></div>
+  <h2 class="t-h"><span class="ln"><span style="--d:.9s">让每个人都拥有 AI 时代的超级能力</span></span></h2>
+  <div class="scene n1 doctor">
+    <div class="ph"><img src="img/s10-doctor.jpg" alt="两位医生看 X 光片" width="1800" height="1013" style="--d:1.2s"></div>
+    <h3 class="t-lead fx" style="--d:1.5s">医疗</h3>
+    <p class="t-small fx" style="--d:1.6s">让专业服务更容易获得支持</p>
+  </div>
+  <div class="scene n2">
+    <div class="ph"><img src="img/s10-edit.jpg" alt="屏幕上的剪辑软件" width="933" height="1400" style="--d:1.35s"></div>
+    <h3 class="t-lead fx" style="--d:1.65s">创作与娱乐</h3>
+    <p class="t-small fx" style="--d:1.75s">让表达不再受限于一个人的能力</p>
+  </div>
+  <div class="scene n3 team">
+    <div class="ph"><img src="img/s10-team.jpg" alt="几个人围着电脑协作" width="1600" height="1067" style="--d:1.5s"></div>
+    <h3 class="t-lead fx" style="--d:1.8s">工作与发展</h3>
+    <p class="t-small fx" style="--d:1.9s">让资源有限的小团队也有更多可能</p>
+  </div>
+  <p class="close t-lead" data-step="1">更值得期待的未来，正在由在座的各位参与创造</p>
+  <div class="notes">
+    <p>AI 是否真的会产生主观体验，现在下定论，我觉得还太早。</p>
+    <p>但多 Agent 协作让我看到一个很值得期待的方向：那些原本需要不同专业、不同角色接力完成的事，有机会以新的方式组织起来。</p>
+    <p>站在一个普通使用者的位置，我最期待的，不一定是它再说出一句多么像人的话，而是这些能力最后能帮谁解决什么问题。</p>
+    <p>我希望在医疗场景里，它能在专业人员负责的前提下，协助整理信息、减轻重复工作，让更多人更容易得到可靠的服务和解释。</p>
+    <p>在创作和娱乐里，我希望一个有想法的人，不必因为不会画画、不会剪辑、不会写程序，就一直停在“我本来想做”这一步。</p>
+    <p>在工作和发展上，我也期待，一个资源有限的小团队，甚至一个普通人，能够获得过去只有更大组织才负担得起的一部分协作支持。</p>
+    <p>这些还不是已经兑现的承诺。但也正因为如此，现场的各位才不只是旁观者，而是这种未来的共创人。</p>
+    <p>从工具、产品到具体场景，大家今天做出的选择，都可能决定这些能力最后会停留在演示里，还是走进更多人的生活。</p>
+    <p>下一次让我想把 AI 讲给更多人听的，也许不是一句更像人的回答，而是某个人真的因此少了一道难题、多了一种选择。</p>
+    <p>这样的未来，期待和在座的各位一起看到，也一起把它做出来。谢谢大家。</p>
+  </div>
+</section>
+</main>
+<div class="counter" id="counter"></div>
+<div class="notes-panel" id="notesPanel"></div>
+<script src="deck.js"></script>
+</body>
+</html>
